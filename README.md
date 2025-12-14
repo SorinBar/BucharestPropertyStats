@@ -1,7 +1,7 @@
 ### Deploy
 
 ```
-git subtree push --prefix /frontend/dist origin gh-pages
+git subtree push --prefix frontend/dist origin gh-pages
 ```
 
 ### Sources
