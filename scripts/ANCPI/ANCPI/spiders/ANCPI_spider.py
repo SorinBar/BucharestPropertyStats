@@ -1,3 +1,5 @@
+import os
+import uuid
 import scrapy
 
 class ANCPISpider(scrapy.Spider):
@@ -123,11 +125,15 @@ class ANCPISpider(scrapy.Spider):
         ).get()
 
         if link:
-            yield {
-                "url": link
-            }
-
+            yield scrapy.Request(link, callback=self.save_file, meta={'page_url': response.url})
+        
         if link2:
-            yield {
-                "url": link2
-            }
+            yield scrapy.Request(link, callback=self.save_file, meta={'page_url': response.url})
+
+    def save_file(self, response):
+        file_name = response.meta['page_url'].rstrip('/').split('/')[-1] + ".xlsx"
+        filename = f"downloads/{file_name}"
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+        with open(filename, "wb") as f:
+            f.write(response.body)
+        self.log(f"Saved file {filename}")
