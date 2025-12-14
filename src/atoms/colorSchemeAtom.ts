@@ -1,4 +1,3 @@
-import type { MantineColorScheme } from '@mantine/core';
-import { atom } from 'jotai';
+import { atomWithStorage } from 'jotai/utils';
 
-export const colorSchemeAtom = atom<MantineColorScheme>('light');
+export const colorSchemeAtom = atomWithStorage<'light' | 'dark'>('colorSchemeAtom', 'light');

@@ -1,4 +1,5 @@
 import { LineChartCard } from '../components/LineChartCard';
+import BasePage from './common/BasePage';
 
 const data = [
   {
@@ -268,21 +269,19 @@ const data = [
   },
 ];
 
-function StatsPage() {
-  return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '100vh',
-        width: '100vw',
-      }}
-    >
-      <LineChartCard data={data} />
-    </div>
-  );
+const sections = [
+  {
+    label: 'Stats',
+    component: <LineChartCard data={data} />,
+  },
+  {
+    label: 'Sources',
+    component: <div>TEST</div>,
+  },
+];
+
+function HomePage() {
+  return <BasePage sections={sections} />;
 }
 
-export default StatsPage;
+export default HomePage;
