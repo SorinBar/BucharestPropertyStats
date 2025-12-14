@@ -7,7 +7,7 @@ function App() {
   const [colorScheme] = useAtom(colorSchemeAtom);
 
   const theme = createTheme({
-    primaryColor: colorScheme === 'light' ? 'blue' : 'teal',
+    primaryColor: colorScheme === 'light' ? 'blue' : 'yellow',
   });
 
   return (

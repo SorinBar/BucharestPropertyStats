@@ -1,5 +1,6 @@
 import { LineChartCard } from './LineChartCard';
 import classes from './StatisticsSection.module.css';
+import { getANCPIDataPerMonth, getANCPIDataPerYear } from '../utils/getANCPIData';
 
 const data = [
   {
@@ -272,8 +273,8 @@ const data = [
 export function StatisticsSection() {
   return (
     <div className={classes.container}>
-      <LineChartCard title="test1" data={data} />
-      <LineChartCard title="test2" data={data} />
+      <LineChartCard title="test1" data={getANCPIDataPerMonth()} width={8000} />
+      <LineChartCard title="test2" data={getANCPIDataPerYear()} />
       <LineChartCard title="test3" data={data} />
     </div>
   );
