@@ -1,5 +1,5 @@
 import { createTheme, MantineProvider } from '@mantine/core';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import StatsPage from './pages/StatsPage';
 import SourcesPage from './pages/SourcesPage';
 import { useAtom } from 'jotai';
@@ -14,12 +14,12 @@ function App() {
 
   return (
     <MantineProvider theme={theme} defaultColorScheme={colorScheme}>
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
-          <Route path="BucharestPropertyStats/" element={<StatsPage />} />
-          <Route path="BucharestPropertyStats/sources" element={<SourcesPage />} />
+          <Route path="/" element={<StatsPage />} />
+          <Route path="/sources" element={<SourcesPage />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </MantineProvider>
   );
 }
