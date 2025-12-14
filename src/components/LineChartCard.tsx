@@ -2,10 +2,11 @@ import { Card, Text } from '@mantine/core';
 import { ResponsiveLine, type LineSeries } from '@nivo/line';
 
 interface LineChartCardProps {
+  title: string;
   data: LineSeries[];
 }
 
-export function LineChartCard({ data }: LineChartCardProps) {
+export function LineChartCard({ title, data }: LineChartCardProps) {
   return (
     <Card
       shadow="sm"
@@ -14,7 +15,7 @@ export function LineChartCard({ data }: LineChartCardProps) {
         width: '90%',
       }}
     >
-      <Text mb="sm">Monthly Sales</Text>
+      <Text mb="sm">{title}</Text>
       <div style={{ height: 400 }}>
         <ResponsiveLine
           data={data}
