@@ -271,11 +271,11 @@ const data = [
 
 const sections = [
   {
-    label: 'Stats',
+    label: 'Statistici',
     component: <LineChartCard data={data} />,
   },
   {
-    label: 'Sources',
+    label: 'Surse',
     component: <div>TEST</div>,
   },
 ];

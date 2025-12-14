@@ -11,7 +11,7 @@ export function LineChartCard({ data }: LineChartCardProps) {
       shadow="sm"
       padding="lg"
       style={{
-        width: 1000,
+        width: '90%',
       }}
     >
       <Text mb="sm">Monthly Sales</Text>
@@ -24,6 +24,25 @@ export function LineChartCard({ data }: LineChartCardProps) {
           axisLeft={{ legend: 'count', legendOffset: -40 }}
           pointSize={10}
           pointColor={{ theme: 'background' }}
+          theme={{
+            axis: {
+              legend: {
+                text: {
+                  fill: 'var(--mantine-color-text)',
+                },
+              },
+              ticks: {
+                text: {
+                  fill: 'var(--mantine-color-text)',
+                },
+              },
+            },
+            legends: {
+              text: {
+                fill: 'var(--mantine-color-text)',
+              },
+            },
+          }}
           pointBorderWidth={2}
           pointBorderColor={{ from: 'seriesColor' }}
           pointLabelYOffset={-12}
