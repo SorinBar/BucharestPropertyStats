@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Text, Card, createTheme, MantineProvider } from '@mantine/core';
 import { ResponsiveLine } from '@nivo/line';
 
